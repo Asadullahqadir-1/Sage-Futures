@@ -27,9 +27,9 @@ const Contact: React.FC = () => {
     setSubmitted(true);
   };
   return (
-    <div className="fade-in pt-32 pb-24 bg-gradient-to-b from-brand-offwhite via-white to-brand-offwhite">
+    <div className="fade-in pt-24 md:pt-32 pb-16 md:pb-24 bg-gradient-to-b from-brand-offwhite via-white to-brand-offwhite">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-20">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
           <Reveal as="div">
             <span className="text-brand-brass font-bold tracking-[0.4em] uppercase text-xs mb-4 block">Engagement</span>
             <h1 className="text-4xl md:text-6xl font-serif text-brand-sage mb-10">Initiate Dialogue</h1>
@@ -86,7 +86,7 @@ const Contact: React.FC = () => {
             </div>
           </Reveal>
           
-          <Reveal as="div" className="bg-brand-offwhite/80 backdrop-blur-sm p-12 border border-brand-stone shadow-sm" delayMs={140}>
+          <Reveal as="div" className="bg-brand-offwhite/80 backdrop-blur-sm p-8 md:p-12 border border-brand-stone shadow-sm" delayMs={140}>
             {submitted && (
               <div className="mb-8 rounded-md border border-brand-evergreen/40 bg-brand-evergreen/5 px-4 py-3 text-xs tracking-[0.2em] uppercase text-brand-evergreen flex items-center gap-3">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -150,8 +150,8 @@ const Contact: React.FC = () => {
           </Reveal>
         </div>
       </div>
-      <div className="mt-16 border-t border-brand-stone/20">
-        <div className="w-full h-72 md:h-80 lg:h-96 grayscale hover:grayscale-0 transition-all duration-700 overflow-hidden">
+      <div className="mt-12 md:mt-16 border-t border-brand-stone/20">
+        <div className="w-full h-64 sm:h-72 md:h-80 lg:h-96 grayscale hover:grayscale-0 transition-all duration-700 overflow-hidden">
           <iframe
             title="Sage Futures Location"
             src="https://www.google.com/maps?q=3900%20Crown%20Rd%20SW%20Atlanta%20GA%2030304&output=embed"
