@@ -1,6 +1,7 @@
 
 import React from "react";
 import Reveal from "../components/Reveal";
+import founderImage from "../images/founder.jpg";
 
 const About: React.FC = () => {
   return (
@@ -36,7 +37,7 @@ const About: React.FC = () => {
             <div className="relative">
               <div className="absolute -inset-4 -z-10 bg-brand-brass/20" aria-hidden="true" />
               <img
-                src="/images/founder.jpg"
+                src={founderImage}
                 alt="Nia Harper"
                 className="w-full h-full object-cover shadow-lg"
               />
