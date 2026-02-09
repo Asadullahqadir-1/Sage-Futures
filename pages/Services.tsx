@@ -1,61 +1,104 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { Reveal } from "../components/Reveal";
 
 const services = [
-  "Systems & Economic Advisory",
-  "Governance & Program Redesign",
-  "Strategic Funding & Capital Alignment",
-  "Community Ownership & Infrastructure Design",
+  {
+    title: "Systems & Economic Advisory",
+    description:
+      "Strategy, diagnostics, and implementation guidance where mission, capital, and capacity converge.",
+    icon: "briefcase",
+  },
+  {
+    title: "Governance & Program Redesign",
+    description:
+      "Structural design for decision-making, roles, and delivery models grounded in real constraints.",
+    icon: "scales",
+  },
+  {
+    title: "Strategic Funding & Capital Alignment",
+    description:
+      "Aligning philanthropic, investment, and earned revenue with long-term sustainability.",
+    icon: "diamond",
+  },
+  {
+    title: "Community Ownership & Infrastructure Design",
+    description:
+      "Designing shared infrastructure that distributes responsibility and builds durable stewardship.",
+    icon: "globe",
+  },
 ];
+
+const ServiceIcon: React.FC<{ variant: string }> = ({ variant }) => {
+  const sharedProps = {
+    viewBox: "0 0 24 24",
+    fill: "none",
+    strokeWidth: 1.6,
+    stroke: "currentColor",
+    className: "w-6 h-6",
+  };
+
+  switch (variant) {
+    case "scales":
+      return (
+        <svg {...sharedProps}>
+          <path d="M4 10l4 6 4-6H4z" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M12 4h8l-4 6-4-6z" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M12 4v16" strokeLinecap="round" />
+        </svg>
+      );
+    case "diamond":
+      return (
+        <svg {...sharedProps}>
+          <path d="M12 3l8 7-8 11-8-11 8-7z" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M12 3l4 7-4 11-4-11 4-7z" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      );
+    case "globe":
+      return (
+        <svg {...sharedProps}>
+          <circle cx="12" cy="12" r="9" />
+          <path d="M3 12h18" strokeLinecap="round" />
+          <path d="M12 3c2.5 2.7 4 6.1 4 9s-1.5 6.3-4 9c-2.5-2.7-4-6.1-4-9s1.5-6.3 4-9z" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      );
+    default:
+      return (
+        <svg {...sharedProps}>
+          <rect x="4" y="6" width="16" height="12" rx="2" />
+          <path d="M4 10h16" strokeLinecap="round" />
+          <path d="M9 14h2" strokeLinecap="round" />
+        </svg>
+      );
+  }
+};
 
 const Services: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-brand-offwhite via-white to-brand-offwhite/80 pt-24 pb-24">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-        <Reveal as="section" className="space-y-4">
-          <p className="text-xs font-bold tracking-[0.35em] text-brand-brass uppercase">Services</p>
-          <h1 className="text-3xl md:text-4xl font-serif text-brand-charcoal">How Sage Futures Engages</h1>
+    <div className="min-h-screen bg-brand-offwhite pt-24 pb-24">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+        <Reveal as="section" className="space-y-3 text-center">
+          <h1 className="text-3xl md:text-4xl font-serif text-brand-charcoal">Our Services</h1>
+          <p className="text-sm md:text-base text-brand-charcoal/75 max-w-2xl mx-auto">
+            Sustainability consulting spanning systems, governance, funding, and infrastructure design.
+          </p>
         </Reveal>
 
         <Reveal as="section" className="grid gap-8 md:grid-cols-2" delayMs={80}>
-          {services.map((label, index) => (
+          {services.map((service) => (
             <div
-              key={label}
-              className="group relative bg-white/85 backdrop-blur-sm border border-brand-stone/40 hover:border-brand-brass/70 shadow-sm px-8 py-10 flex flex-col justify-between transition-all duration-500 overflow-hidden"
+              key={service.title}
+              className="group relative flex items-start gap-4 bg-white p-8 border border-brand-stone/30 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-brand-brass/40"
             >
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-br from-brand-sage/5 via-transparent to-brand-brass/10 transition-opacity duration-500" />
-              <div className="relative space-y-4">
-                <span className="text-[10px] font-bold tracking-[0.35em] uppercase text-brand-stone/70">0{index + 1}</span>
-                <h2 className="text-xl md:text-2xl font-serif text-brand-sage">{label}</h2>
+              <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center border border-brand-sage/50 bg-brand-offwhite text-brand-sage">
+                <ServiceIcon variant={service.icon} />
               </div>
+              <div className="space-y-3">
+                <h2 className="text-lg font-serif text-brand-charcoal">{service.title}</h2>
+                <p className="text-sm text-brand-charcoal/75 leading-relaxed">{service.description}</p>
+              </div>
+              <div className="absolute inset-0 pointer-events-none border border-brand-sage/20 translate-x-2 translate-y-2 transition-transform duration-300 group-hover:translate-x-3 group-hover:translate-y-3" aria-hidden="true" />
             </div>
           ))}
-        </Reveal>
-
-        <Reveal
-          as="section"
-          className="border-t border-brand-stone/30 pt-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
-          delayMs={160}
-        >
-          <div className="space-y-3 max-w-xl text-xs md:text-sm text-brand-charcoal/75 leading-relaxed">
-            <p>Unsure which service is the right entry point?</p>
-            <p>We can help you map your current context to the appropriate advisory, redesign, or capital pathway.</p>
-          </div>
-          <div className="flex flex-wrap gap-4">
-            <Link
-              to="/advisory"
-              className="text-[11px] font-bold uppercase tracking-[0.3em] px-8 py-3 border border-brand-sage text-brand-sage hover:bg-brand-sage hover:text-white transition-all duration-300"
-            >
-              Explore Advisory
-            </Link>
-            <Link
-              to="/contact"
-              className="text-[11px] font-bold uppercase tracking-[0.3em] px-8 py-3 bg-brand-sage text-white hover:bg-brand-brass transition-all duration-300"
-            >
-              Discuss Services
-            </Link>
-          </div>
         </Reveal>
       </div>
     </div>

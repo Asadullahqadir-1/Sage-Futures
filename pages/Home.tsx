@@ -63,12 +63,12 @@ const Home: React.FC = () => {
           </Reveal>
           <Reveal as="div" className="grid md:grid-cols-2 gap-6 text-sm md:text-base text-brand-charcoal/80">
             <ul className="space-y-3 list-disc list-inside">
-              <li>Systems &amp; Economic Advisory</li>
-              <li>Governance &amp; Program Redesign</li>
+              <li className="transition-colors duration-200 hover:text-brand-sage">Systems &amp; Economic Advisory</li>
+              <li className="transition-colors duration-200 hover:text-brand-sage">Governance &amp; Program Redesign</li>
             </ul>
             <ul className="space-y-3 list-disc list-inside">
-              <li>Strategic Funding &amp; Capital Alignment</li>
-              <li>Community Ownership &amp; Infrastructure Design</li>
+              <li className="transition-colors duration-200 hover:text-brand-sage">Strategic Funding &amp; Capital Alignment</li>
+              <li className="transition-colors duration-200 hover:text-brand-sage">Community Ownership &amp; Infrastructure Design</li>
             </ul>
           </Reveal>
         </div>

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import Reveal from '../components/Reveal';
+import React, { useState } from "react";
+import Reveal from "../components/Reveal";
 
 const Contact: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -26,67 +26,31 @@ const Contact: React.FC = () => {
 
     setSubmitted(true);
   };
+  const scrollToForm = () => {
+    const form = document.getElementById("contact-form");
+    if (form) {
+      form.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <div className="fade-in pt-24 md:pt-32 pb-16 md:pb-24 bg-gradient-to-b from-brand-offwhite via-white to-brand-offwhite">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
-          <Reveal as="div">
-            <span className="text-brand-brass font-bold tracking-[0.4em] uppercase text-xs mb-4 block">Engagement</span>
-            <h1 className="text-4xl md:text-6xl font-serif text-brand-sage mb-10">Initiate Dialogue</h1>
-            <p className="text-lg text-brand-charcoal/60 leading-relaxed font-light mb-12">
-              Sage Futures is currently reviewing inquiries for Tier 1 Advisory and selective Project Engagements for the upcoming fiscal cycle.
-            </p>
-            
-            <div className="space-y-10">
-              <div className="space-y-3">
-                <div>
-                  <h4 className="text-[10px] uppercase tracking-[0.4em] text-brand-brass font-bold mb-2">Direct Inquiry</h4>
-                  <a
-                    href="mailto:info@niazharper.com"
-                    className="text-2xl font-serif text-brand-charcoal underline decoration-brand-brass/40 underline-offset-4 hover:decoration-brand-brass"
-                  >
-                    info@niazharper.com
-                  </a>
-                </div>
-                <div>
-                  <p className="text-[11px] text-brand-charcoal/60">
-                    For practice-specific questions, you may also reach us at
-                    {' '}
-                    <a
-                      href="mailto:inquiry@sagefutures.com"
-                      className="underline decoration-brand-brass/40 underline-offset-2 hover:decoration-brand-brass"
-                    >
-                      inquiry@sagefutures.com
-                    </a>
-                    .
-                  </p>
-                </div>
-              </div>
-              <div>
-                <h4 className="text-[10px] uppercase tracking-[0.4em] text-brand-brass font-bold mb-2">Availability</h4>
-                <p className="text-sm text-brand-charcoal/60">Q3 & Q4 2024 Strategy Openings Available.</p>
-              </div>
-              <div className="space-y-2">
-                <h4 className="text-[10px] uppercase tracking-[0.4em] text-brand-brass font-bold mb-2">Contact Details</h4>
-                <p className="text-sm text-brand-charcoal/70 leading-relaxed">
-                  3900 Crown Rd SW #16709,
-                  <br />
-                  Atlanta, GA, 30304, USA
-                </p>
-                <p className="text-sm text-brand-charcoal/70">
-                  Phone:{' '}
-                  <a
-                    href="tel:16785612160"
-                    className="underline decoration-brand-brass/40 underline-offset-2 hover:decoration-brand-brass"
-                  >
-                    678-561-2160
-                  </a>
-                </p>
-              </div>
-            </div>
-          </Reveal>
-          
-          <Reveal as="div" className="bg-brand-offwhite/80 backdrop-blur-sm p-8 md:p-12 border border-brand-stone shadow-sm" delayMs={140}>
+    <div className="fade-in pt-24 md:pt-32 pb-16 md:pb-24 bg-brand-offwhite">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <Reveal as="section" className="space-y-6">
+          <h1 className="text-4xl md:text-5xl font-serif text-brand-charcoal">Contact</h1>
+          <p className="text-base md:text-lg text-brand-charcoal/80 leading-relaxed">
+            If you’re ready to move beyond managing symptoms and toward structural solutions, we welcome a conversation.
+          </p>
+          <button
+            type="button"
+            onClick={scrollToForm}
+            className="inline-block bg-brand-sage text-white px-8 py-4 text-xs font-bold uppercase tracking-[0.3em] hover:bg-brand-brass transition-all duration-300"
+          >
+            Schedule a Discovery Conversation
+          </button>
+        </Reveal>
+
+        <Reveal as="section" className="bg-white p-8 md:p-10 border border-brand-stone shadow-sm" delayMs={120}>
             {submitted && (
               <div className="mb-8 rounded-md border border-brand-evergreen/40 bg-brand-evergreen/5 px-4 py-3 text-xs tracking-[0.2em] uppercase text-brand-evergreen flex items-center gap-3">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -95,7 +59,7 @@ const Contact: React.FC = () => {
                 Inquiry received. We will respond with next steps.
               </div>
             )}
-            <form className="space-y-8" onSubmit={handleSubmit}>
+            <form id="contact-form" className="space-y-8" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-2">
                   <label className="text-[10px] uppercase tracking-widest text-brand-charcoal/50 font-bold">Full Name</label>
@@ -142,26 +106,12 @@ const Contact: React.FC = () => {
               </div>
               <button
                 type="submit"
-                className="w-full bg-brand-sage text-white py-5 text-xs font-bold uppercase tracking-widest hover:bg-brand-brass transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0"
+                className="w-full bg-brand-sage text-white py-5 text-xs font-bold uppercase tracking-[0.3em] hover:bg-brand-brass transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0"
               >
-                {submitted ? 'Submit Another Inquiry' : 'Submit Inquiry'}
+                Schedule a Discovery Conversation
               </button>
             </form>
           </Reveal>
-        </div>
-      </div>
-      <div className="mt-12 md:mt-16 border-t border-brand-stone/20">
-        <div className="w-full h-64 sm:h-72 md:h-80 lg:h-96 grayscale hover:grayscale-0 transition-all duration-700 overflow-hidden">
-          <iframe
-            title="Sage Futures Location"
-            src="https://www.google.com/maps?q=3900%20Crown%20Rd%20SW%20Atlanta%20GA%2030304&output=embed"
-            width="100%"
-            height="100%"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="w-full h-full border-0"
-          />
-        </div>
       </div>
     </div>
   );

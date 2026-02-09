@@ -26,11 +26,11 @@ const Advisory: React.FC = () => {
         <Reveal as="section" className="space-y-4" delayMs={100}>
           <h2 className="text-sm font-bold tracking-[0.3em] text-brand-brass uppercase">Who This Is For</h2>
           <ul className="space-y-3 text-sm md:text-base text-brand-charcoal/80 list-disc list-inside">
-            <li>Organizations stewarding care, education, labor, or community infrastructure.</li>
-            <li>Leaders responsible for complex, multi-stakeholder systems.</li>
-            <li>Teams facing growth, transition, or structural redesign.</li>
-            <li>Initiatives experiencing misalignment between mission, funding, and operations.</li>
-            <li>Contexts where failure has material impacts on people or ecosystems.</li>
+            <li className="transition-colors duration-200 hover:text-brand-sage">Strong mission, weak sustainability</li>
+            <li className="transition-colors duration-200 hover:text-brand-sage">Burnout masked as growth</li>
+            <li className="transition-colors duration-200 hover:text-brand-sage">Funding misaligned with values</li>
+            <li className="transition-colors duration-200 hover:text-brand-sage">Leadership carrying too much alone</li>
+            <li className="transition-colors duration-200 hover:text-brand-sage">Programs succeeding while systems fail</li>
           </ul>
         </Reveal>
 
@@ -39,29 +39,30 @@ const Advisory: React.FC = () => {
           <h2 className="text-sm font-bold tracking-[0.3em] text-brand-brass uppercase">What We Do</h2>
           <p className="text-sm md:text-base text-brand-charcoal/80 leading-relaxed">We help clients:</p>
           <ul className="space-y-3 text-sm md:text-base text-brand-charcoal/80 list-disc list-inside">
-            <li>Diagnose structural risk and fragility in existing models.</li>
-            <li>Clarify the economic logic of their system.</li>
-            <li>Design governance, roles, and flows that reflect real capacity.</li>
-            <li>Align capital (philanthropic, investment, earned revenue) with long-term sustainability.</li>
-            <li>Build structures that honor care, dignity, and accountability.</li>
+            <li className="transition-colors duration-200 hover:text-brand-sage">Identify where value is leaking</li>
+            <li className="transition-colors duration-200 hover:text-brand-sage">Redesign governance and decision-making</li>
+            <li className="transition-colors duration-200 hover:text-brand-sage">Align capital with long-term impact</li>
+            <li className="transition-colors duration-200 hover:text-brand-sage">Reduce burnout structurally</li>
+            <li className="transition-colors duration-200 hover:text-brand-sage">Build durable infrastructure</li>
           </ul>
         </Reveal>
 
         {/* How It Works */}
         <Reveal as="section" className="space-y-4" delayMs={200}>
           <h2 className="text-sm font-bold tracking-[0.3em] text-brand-brass uppercase">How It Works</h2>
-          <p className="text-sm md:text-base text-brand-charcoal/80 leading-relaxed max-w-3xl">
-            Outcome-driven, context-specific engagements focused on diagnosis, redesign, and implementation guidance. We deliver coherence—not generic frameworks.
-          </p>
+          <div className="space-y-3 text-sm md:text-base text-brand-charcoal/80 leading-relaxed max-w-3xl">
+            <p>Outcome-driven, context-specific engagements focused on diagnosis, redesign, and implementation guidance.</p>
+            <p>We deliver coherence—not generic frameworks.</p>
+          </div>
         </Reveal>
 
         {/* Engagement Types */}
         <Reveal as="section" className="space-y-4" delayMs={250}>
           <h2 className="text-sm font-bold tracking-[0.3em] text-brand-brass uppercase">Engagement Types</h2>
           <ul className="space-y-3 text-sm md:text-base text-brand-charcoal/80 list-disc list-inside">
-            <li>Tiered advisory retainers for ongoing strategic support.</li>
-            <li>Time-bound diagnostics and structural assessments.</li>
-            <li>Project-based engagements focused on redesign and implementation.</li>
+            <li className="transition-colors duration-200 hover:text-brand-sage">Advisory retainers</li>
+            <li className="transition-colors duration-200 hover:text-brand-sage">Diagnostic engagements</li>
+            <li className="transition-colors duration-200 hover:text-brand-sage">Project-based systems redesign</li>
           </ul>
         </Reveal>
 
@@ -73,9 +74,6 @@ const Advisory: React.FC = () => {
         >
           <div className="space-y-3 max-w-2xl">
             <h2 className="text-xl md:text-2xl font-serif">Schedule a Discovery Conversation</h2>
-            <p className="text-xs md:text-sm text-brand-offwhite/80 leading-relaxed">
-              Share context, constraints, and desired outcomes. We&apos;ll respond with a proposed approach and confirm whether Sage Futures is the right fit.
-            </p>
           </div>
           <div className="flex flex-col items-start gap-2">
             <button

@@ -1,42 +1,60 @@
 
-import React from 'react';
-import Reveal from '../components/Reveal';
+import React from "react";
+import Reveal from "../components/Reveal";
 
 const About: React.FC = () => {
   return (
-    <div className="fade-in pt-32 pb-24 bg-gradient-to-b from-brand-offwhite via-white to-brand-offwhite">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-20 items-start">
-          <Reveal as="div">
-            <span className="text-brand-brass font-bold tracking-[0.4em] uppercase text-xs mb-4 block">The Practice</span>
-            <h1 className="text-4xl md:text-7xl font-serif text-brand-sage mb-10">Why Sage Futures?</h1>
-            <div className="space-y-6 text-brand-charcoal/70 text-lg font-light leading-relaxed">
+    <div className="fade-in pt-32 pb-24 bg-brand-offwhite min-h-screen">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <Reveal as="section" className="space-y-4">
+          <h1 className="text-4xl md:text-5xl font-serif text-brand-charcoal">About</h1>
+          <p className="text-base md:text-lg text-brand-charcoal/80 leading-relaxed">
+            Sage Futures supports decisions made today with tomorrow in mind—helping organizations design systems that can sustain care, mission, and impact.
+          </p>
+        </Reveal>
+
+        <Reveal as="section" className="space-y-4" delayMs={80}>
+          <h2 className="text-sm font-bold tracking-[0.3em] uppercase text-brand-brass">Why Sage Futures</h2>
+          <p className="text-sm md:text-base text-brand-charcoal/80 leading-relaxed">Sage represents wisdom, discernment, and pattern recognition.</p>
+          <p className="text-sm md:text-base text-brand-charcoal/80 leading-relaxed">Futures reflects both what is next and how value is shaped over time.</p>
+          <p className="text-sm md:text-base text-brand-charcoal/80 leading-relaxed">
+            Together, Sage Futures stands for long-term thinking grounded in lived reality.
+          </p>
+        </Reveal>
+
+        <Reveal as="section" className="space-y-4" delayMs={160}>
+          <h2 className="text-sm font-bold tracking-[0.3em] uppercase text-brand-brass">Founder</h2>
+          <p className="text-sm md:text-base text-brand-charcoal/80 leading-relaxed">Founded by Nia Harper, systems thinker and economic advisor.</p>
+          <p className="text-sm md:text-base text-brand-charcoal/80 leading-relaxed">
+            Work is informed by Empress Evolutionary Economics (EEE). Clients do not need to learn the framework to benefit from it.
+          </p>
+        </Reveal>
+
+        <Reveal as="section" className="space-y-10" delayMs={240}>
+          <h2 className="text-sm font-bold tracking-[0.3em] uppercase text-brand-brass">Meet Our Founder</h2>
+          <div className="grid gap-8 md:grid-cols-[minmax(0,420px)_minmax(0,1fr)] md:items-center">
+            <div className="relative">
+              <div className="absolute -inset-4 -z-10 bg-brand-brass/20" aria-hidden="true" />
+              <img
+                src="/images/founder.jpg"
+                alt="Nia Harper"
+                className="w-full h-full object-cover shadow-lg"
+              />
+            </div>
+            <div className="space-y-4 text-sm md:text-base text-brand-charcoal/80 leading-relaxed">
+              <h3 className="text-2xl md:text-3xl font-serif text-brand-charcoal">Nia Harper</h3>
               <p>
-                Standard advisory focuses on the surface—optimizing existing flaws. Sage Futures operates at the bedrock. We address the root economic and systemic causes of organizational fragility.
+                Nia Harper has always had a passion for social and economic justice. She has used this passion to direct her career choices.
               </p>
               <p>
-                We bridge high-level economic theory with the operational reality of care systems. No buzzwords. No clinical abstraction. Just credible structural logic.
+                As an economic developer with 15 years of policy, workforce, and strategic business development experience combined, Nia has worked in leadership roles that call on her knowledge in entrepreneurship, project management, and strategic partnerships across both the private and public sectors—including the federal government, prominent law firms, university systems, and large non-profit organizations—each aimed at improving underserved communities in wealth creation and maintenance.
+              </p>
+              <p>
+                She brings this integrated perspective to Sage Futures, anchoring structural solutions that align mission, capital, and human capacity for sustainable futures.
               </p>
             </div>
-            
-            <div className="mt-16 bg-white p-10 border border-brand-stone italic text-brand-sage font-serif text-xl border-l-4 border-l-brand-brass">
-              "Structural integrity is not an option; it is the prerequisite for sustainability."
-            </div>
-          </Reveal>
-          
-          <Reveal as="div" className="space-y-8" delayMs={140}>
-            {[
-              { title: "Economic Rigor", body: "Data-informed modeling based on systemic reality, not aspirational metrics." },
-              { title: "Grounded Perspective", body: "Non-clinical, operational strategy that respects the complexity of delivery." },
-              { title: "Long-term Durability", body: "We design for the next decade, ensuring systems are built to withstand economic cycles." }
-            ].map((pillar, i) => (
-              <div key={pillar.title} className="bg-white p-10 border border-brand-stone group hover:border-brand-brass transition-all duration-500">
-                <h3 className="text-xl font-serif text-brand-charcoal mb-3 group-hover:text-brand-sage transition-colors">{pillar.title}</h3>
-                <p className="text-brand-charcoal/50 text-sm leading-relaxed">{pillar.body}</p>
-              </div>
-            ))}
-          </Reveal>
-        </div>
+          </div>
+        </Reveal>
       </div>
     </div>
   );
